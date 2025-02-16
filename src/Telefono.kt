@@ -1,8 +1,9 @@
-class Telefono(var encendido: Boolean) : DispositivoElectronico, EncendidoApagado {
+class Telefono(var encendido: Boolean = false) : DispositivoElectronico, EncendidoApagado {
     override fun reiniciar() {
         if (encendido == true) {
             encendido = false
             encendido = true
+            println("Dispositivo reiniciado con éxito.")
         }
     }
 

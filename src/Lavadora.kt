@@ -1,4 +1,4 @@
-class Lavadora(var encendido: Boolean): EncendidoApagado {
+class Lavadora(var encendido: Boolean = false): EncendidoApagado {
 
     override fun encender() {
         encendido = true

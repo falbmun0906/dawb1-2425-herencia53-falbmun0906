@@ -9,11 +9,17 @@ class Coche(override var kmHora: Int = 0, override var motorEncendido: Boolean =
     }
 
     override fun acelerar(cantidad: Int) {
-        kmHora += cantidad
+        if (motorEncendido) {
+            kmHora += cantidad
+        } else println("ERROR: El coche está apagado.")
     }
 
     override fun frenar(cantidad: Int) {
-        kmHora -= cantidad
+        if (motorEncendido) {
+            if (cantidad > kmHora) {
+                kmHora = 0
+            } else kmHora -= cantidad
+        } else println("ERROR: El coche está apagado.")
     }
 
 }
